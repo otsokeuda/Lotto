@@ -72,6 +72,7 @@
             this.tulos3LB = new System.Windows.Forms.Label();
             this.tulos2LB = new System.Windows.Forms.Label();
             this.tulos5LB = new System.Windows.Forms.Label();
+            this.virheLB = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,10 +140,12 @@
             // tulosLB
             // 
             this.tulosLB.AutoSize = true;
-            this.tulosLB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tulosLB.Location = new System.Drawing.Point(394, 90);
+            this.tulosLB.BackColor = System.Drawing.SystemColors.Control;
+            this.tulosLB.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tulosLB.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tulosLB.Location = new System.Drawing.Point(394, 88);
             this.tulosLB.Name = "tulosLB";
-            this.tulosLB.Size = new System.Drawing.Size(52, 21);
+            this.tulosLB.Size = new System.Drawing.Size(58, 18);
             this.tulosLB.TabIndex = 7;
             this.tulosLB.Text = "label1";
             this.tulosLB.Visible = false;
@@ -223,6 +226,7 @@
             // 
             this.r1c1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.r1c1.Location = new System.Drawing.Point(3, 3);
+            this.r1c1.MaxLength = 2;
             this.r1c1.Name = "r1c1";
             this.r1c1.Size = new System.Drawing.Size(32, 29);
             this.r1c1.TabIndex = 16;
@@ -485,11 +489,21 @@
             this.tulos5LB.Text = "label1";
             this.tulos5LB.Visible = false;
             // 
+            // virheLB
+            // 
+            this.virheLB.AutoSize = true;
+            this.virheLB.Location = new System.Drawing.Point(394, 143);
+            this.virheLB.Name = "virheLB";
+            this.virheLB.Size = new System.Drawing.Size(38, 15);
+            this.virheLB.TabIndex = 44;
+            this.virheLB.Text = "label1";
+            // 
             // LottoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 378);
+            this.ClientSize = new System.Drawing.Size(673, 307);
+            this.Controls.Add(this.virheLB);
             this.Controls.Add(this.tulos5LB);
             this.Controls.Add(this.tulos2LB);
             this.Controls.Add(this.tulos3LB);
@@ -554,5 +568,6 @@
         private Label tulos3LB;
         private Label tulos2LB;
         private Label tulos5LB;
+        private Label virheLB;
     }
 }

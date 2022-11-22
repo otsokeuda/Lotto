@@ -11,8 +11,17 @@ namespace Lotto
 
         private void tarkistaBT_Click(object sender, EventArgs e)
         {
+            string[] temp_str = new string[] { r1c1.Text, r1c2.Text, r1c3.Text, r1c4.Text, r1c5.Text, r1c6.Text, r1c7.Text};
+            int[] num = Array.ConvertAll(temp_str, s => int.Parse(s));
+
+            if(num[0] <= 0 || num[0] >= 40)
+            {
+                virheLB.Text = "virhe";
+            }
+
+
             //rivi1 tarkistus
-            if(r1c1.Text == oikeat[0])
+            if (r1c1.Text == oikeat[0])
             {
                 laskuri1++;
             }
@@ -70,6 +79,7 @@ namespace Lotto
             {
                 laskuri2++;
             }
+
             //rivi3 tarkistus
             if (r3c1.Text == oikeat[0])
             {
@@ -99,6 +109,7 @@ namespace Lotto
             {
                 laskuri3++;
             }
+
             //rivi4 tarkistus
             if (r4c1.Text == oikeat[0])
             {
@@ -128,6 +139,7 @@ namespace Lotto
             {
                 laskuri4++;
             }
+
             //rivi5 tarkistus
             if (r5c1.Text == oikeat[0])
             {
@@ -158,7 +170,7 @@ namespace Lotto
                 laskuri5++;
             }
 
-
+            //tulokset
             if (laskuri1 >= 3 || laskuri2 >= 3 || laskuri3 >= 3 || laskuri4 >= 3 || laskuri5 >= 3)
             {
                 tulosLB.Text = "Voitit 10 euroa! Onnea!";
@@ -171,6 +183,17 @@ namespace Lotto
             tulos1LB.Text = laskuri1 + " oikein";
             tulos1LB.Visible = true;
 
+            tulos2LB.Text = laskuri2 + " oikein";
+            tulos2LB.Visible = true;
+
+            tulos3LB.Text = laskuri3 + " oikein";
+            tulos3LB.Visible = true;
+
+            tulos4LB.Text = laskuri4 + " oikein";
+            tulos4LB.Visible = true;
+
+            tulos5LB.Text = laskuri5 + " oikein";
+            tulos5LB.Visible = true;
 
             tulosLB.Visible = true;
         }
