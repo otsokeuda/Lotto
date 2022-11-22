@@ -11,13 +11,11 @@ namespace Lotto
 
         private void tarkistaBT_Click(object sender, EventArgs e)
         {
-            string[] temp_str = new string[] { r1c1.Text, r1c2.Text, r1c3.Text, r1c4.Text, r1c5.Text, r1c6.Text, r1c7.Text};
-            int[] num = Array.ConvertAll(temp_str, s => int.Parse(s));
+            
 
-            if(num[0] <= 0 || num[0] >= 40)
-            {
-                virheLB.Text = "virhe";
-            }
+            
+
+            
 
 
             //rivi1 tarkistus
@@ -171,6 +169,15 @@ namespace Lotto
             }
 
             //tulokset
+            string[] temp_str = new string[] { r1c1.Text, r1c2.Text, r1c3.Text, r1c4.Text, r1c5.Text, r1c6.Text, r1c7.Text };
+            int[] num = Array.ConvertAll(temp_str, s => int.Parse(s));
+
+            int loop;
+            for (loop = 0; loop < 7; loop++) {
+                if (num[loop] <= 0 || num[loop] >= 40)
+                {
+                    tulosLB.Text = "Joku numero ei ole 0-40 välillä.";
+                } }
             if (laskuri1 >= 3 || laskuri2 >= 3 || laskuri3 >= 3 || laskuri4 >= 3 || laskuri5 >= 3)
             {
                 tulosLB.Text = "Voitit 10 euroa! Onnea!";
