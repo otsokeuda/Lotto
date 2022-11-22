@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic;
+
 namespace Lotto
 {
     public partial class LottoForm : Form
@@ -12,11 +14,6 @@ namespace Lotto
         private void tarkistaBT_Click(object sender, EventArgs e)
         {
             
-
-            
-
-            
-
 
             //rivi1 tarkistus
             if (r1c1.Text == oikeat[0])
@@ -170,18 +167,20 @@ namespace Lotto
 
             //tulokset
             string[] temp_str = new string[] { r1c1.Text, r1c2.Text, r1c3.Text, r1c4.Text, r1c5.Text, r1c6.Text, r1c7.Text };
-            int[] num = Array.ConvertAll(temp_str, s => int.Parse(s));
+            int[] num = temp_str.Select(int.Parse).ToArray();
 
-            int loop;
-            for (loop = 0; loop < 7; loop++) {
-                if (num[loop] <= 0 || num[loop] >= 40)
-                {
-                    tulosLB.Text = "Joku numero ei ole 0-40 välillä.";
-                } }
-            if (laskuri1 >= 3 || laskuri2 >= 3 || laskuri3 >= 3 || laskuri4 >= 3 || laskuri5 >= 3)
+            for (int i = 0; i < temp_str.Length; i++)
+
+            if (num[i] < 0 || num[i] > 40)
+            {
+                tulosLB.Text = "Joku numero ei ole 0-40 välillä.";
+            }
+
+            else if (laskuri1 >= 3 || laskuri2 >= 3 || laskuri3 >= 3 || laskuri4 >= 3 || laskuri5 >= 3)
             {
                 tulosLB.Text = "Voitit 10 euroa! Onnea!";
             }
+
             else
             {
                 tulosLB.Text = "Ei voittoa tällä kertaa :(";

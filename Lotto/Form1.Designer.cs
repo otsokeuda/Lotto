@@ -226,7 +226,6 @@
             // 
             this.r1c1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.r1c1.Location = new System.Drawing.Point(3, 3);
-            this.r1c1.MaxLength = 2;
             this.r1c1.Name = "r1c1";
             this.r1c1.Size = new System.Drawing.Size(32, 29);
             this.r1c1.TabIndex = 16;
